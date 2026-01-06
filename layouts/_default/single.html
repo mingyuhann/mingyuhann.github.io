@@ -1,25 +1,89 @@
 {{ define "main" }}
-{{ if eq .Type "blog" }}{{ if not .Params.menu }}
-<h1>{{ .Title }}</h1>
-<p>
-  <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}'>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-    </time>
-  </i>
-</p>
-{{ end }}{{ end }}
-<content>
-  {{ .Content }}
-</content>
+<main class="publications-layout">
+  <h1>{{ .Title }}</h1>
+  <div class="content">
+    {{ .Content }}
+  </div>
+</main>
 
-{{ if eq .Type "blog" }}{{ if (.Param "enablePostNavigator")}}
-{{- partial "post_navigator.html" . -}}
-{{ end }}{{ end }}
+<style>
+.publications-layout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
+.publications-layout h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.publications-layout h2 {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.publications-layout h2:first-of-type {
+  margin-top: 1rem;
+}
+
+.publications-layout p strong:first-child {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.publications-layout p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.publications-layout em {
+  color: #555;
+  font-style: italic;
+}
+
+.publications-layout a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.publications-layout a:hover {
+  text-decoration: underline;
+}
+
+.publications-layout hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Paper entry styling */
+.publications-layout .content > p {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.publications-layout .content > p:last-of-type {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .publications-layout h1 {
+    font-size: 2rem;
+  }
+  
+  .publications-layout h2 {
+    font-size: 1.5rem;
+  }
+}
+</style>
 {{ end }}

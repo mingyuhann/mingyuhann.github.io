@@ -1,3 +1,70 @@
 {{ define "main" }}
-{{ .Content }}
+<main class="home-layout">
+  <div class="profile-section">
+    <div class="profile-image">
+    </div>
+    <div class="profile-content">
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+.home-layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.content ul {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.content strong {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .profile-image {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+</style>
 {{ end }}

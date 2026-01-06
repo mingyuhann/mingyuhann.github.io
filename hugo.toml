@@ -1,0 +1,19 @@
+baseURL = "https://mingyuhann.github.io/"
+languageCode = "en-us"
+title = "Mingyu Han"
+theme = "hugo-bearblog"
+
+[params]
+  author = "Mingyu Han"
+  description = "Researcher & Developer"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 2
