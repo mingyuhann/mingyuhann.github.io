@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Selected Work — Mingyu Han</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  media-item .thumb{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #ececec;
+    margin-bottom: 0.5rem;
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="page-layout">
+      <div class="page-content">
+        <bodycopy>
+          <gallery-grid>
+            <media-item>
+              <div class="thumb"></div>
+              <figcaption class="caption">Project Title, 2026<br>Medium / Description</figcaption>
+            </media-item>
+            <media-item>
+              <div class="thumb"></div>
+              <figcaption class="caption">Project Title, 2026<br>Medium / Description</figcaption>
+            </media-item>
+            <media-item>
+              <div class="thumb"></div>
+              <figcaption class="caption">Project Title, 2025<br>Medium / Description</figcaption>
+            </media-item>
+            <media-item>
+              <div class="thumb"></div>
+              <figcaption class="caption">Project Title, 2025<br>Medium / Description</figcaption>
+            </media-item>
+          </gallery-grid>
+        </bodycopy>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom-fade -->
+  <div class="page pinned pinned-top fixed">
+    <div class="page-layout">
+      <div class="page-content"></div>
+    </div>
+  </div>
+
+  <!-- toggle nav -->
+  <div class="page pinned pinned-bottom fixed">
+    <div class="page-layout">
+      <div class="page-content">
+        <bodycopy><a class="button" href="homepage-information.html">Information</a><a class="button active" href="selected-work.html">Selected Work</a><a class="button" href="publications.html">Publications</a></bodycopy>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
